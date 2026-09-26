@@ -1,0 +1,16 @@
+.env
+*.log
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite
+*.db
+*.tar
+*.tar.gz
+*.backup
+evidence/
+secrets/
+restore-lab/
+.DS_Store
+
