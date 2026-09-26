@@ -1,0 +1,17 @@
+filenames:
+  - /opt/npmplus/nginx/logs/access.log
+labels:
+  type: npmplus
+---
+listen_addr: 127.0.0.1:7422
+appsec_configs:
+  - crowdsecurity/appsec-default
+name: appsec
+source: appsec
+labels:
+  type: appsec
+
+# Adapt the listener to the actual container/network topology. Do not publish
+# the AppSec listener to untrusted networks. Add the Nginx error log only when
+# rate-limit event acquisition is intentionally configured.
+

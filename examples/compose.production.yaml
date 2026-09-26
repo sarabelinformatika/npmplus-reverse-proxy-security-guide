@@ -1,0 +1,35 @@
+name: npmplus
+
+services:
+  npmplus:
+    image: ${NPMPLUS_IMAGE:?Set a reviewed NPMplus tag or digest}
+    container_name: npmplus
+    restart: unless-stopped
+    network_mode: host
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+      - SETGID
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - ${NPMPLUS_DATA:-/opt/npmplus}:/data
+    environment:
+      TZ: ${TZ:?Set a valid timezone}
+      NPM_LISTEN_LOCALHOST: ${NPM_LISTEN_LOCALHOST:-true}
+      LOGROTATE: ${LOGROTATE:-true}
+      LOGROTATIONS: ${LOGROTATIONS:-14}
+      GOA: ${GOA:-false}
+      DISABLE_H3_QUIC: ${DISABLE_H3_QUIC:-false}
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-check-certificate --quiet --spider https://127.0.0.1:81/api/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+# Review the current upstream compose.yaml before every deployment. NPMplus
+# features and required capabilities evolve. Add CrowdSec and identity-provider
+# settings only after completing the corresponding guide chapters.
+

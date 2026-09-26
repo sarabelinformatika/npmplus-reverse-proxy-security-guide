@@ -1,0 +1,10 @@
+# Example only. Copy to the NPMplus CrowdSec configuration location documented
+# by the current upstream release and protect it from unauthorized access.
+
+ENABLED=true
+API_URL=http://127.0.0.1:8080
+API_KEY=REPLACE_WITH_A_DEDICATED_BOUNCER_KEY
+
+# Do not commit the populated file. Confirm the exact key names and defaults in
+# the current upstream-generated configuration before editing.
+
