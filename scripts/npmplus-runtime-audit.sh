@@ -35,7 +35,11 @@ section "Security settings"
 docker inspect "$container" --format 'Privileged={{.HostConfig.Privileged}} ReadonlyRootfs={{.HostConfig.ReadonlyRootfs}} NetworkMode={{.HostConfig.NetworkMode}}'
 docker inspect "$container" --format 'CapDrop={{json .HostConfig.CapDrop}} CapAdd={{json .HostConfig.CapAdd}} SecurityOpt={{json .HostConfig.SecurityOpt}}'
 privileged=$(docker inspect "$container" --format '{{.HostConfig.Privileged}}')
-[[ "$privileged" == "false" ]] && ok "Privileged mode is disabled" || fail "Privileged mode is enabled"
+if [[ "$privileged" == "false" ]]; then
+  ok "Privileged mode is disabled"
+else
+  fail "Privileged mode is enabled"
+fi
 
 security_opt=$(docker inspect "$container" --format '{{json .HostConfig.SecurityOpt}}')
 if [[ "$security_opt" == *"no-new-privileges:true"* ]]; then
@@ -74,4 +78,3 @@ section "Summary"
 printf 'Failures: %d\nWarnings: %d\n' "$failures" "$warnings"
 printf 'This report is read-only. Redact operational metadata before sharing.\n'
 ((failures == 0))
-
