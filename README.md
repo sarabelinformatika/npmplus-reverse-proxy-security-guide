@@ -4,6 +4,20 @@
   <img src="images/npmplus-reverse-proxy-security-guide.jpg" alt="NPMplus Reverse Proxy Security Guide">
 </p>
 
+![Platform](https://img.shields.io/badge/Platform-Docker-2496ED?style=flat-square)
+![Runtime](https://img.shields.io/badge/Runtime-Compose%20v2-2496ED?style=flat-square)
+![Edge](https://img.shields.io/badge/Edge-NPMplus-EF2D2D?style=flat-square)
+![Scope](https://img.shields.io/badge/Scope-Production-2EA44F?style=flat-square)
+![Method](https://img.shields.io/badge/Method-Assess%20%7C%20Harden%20%7C%20Recover-0086C9?style=flat-square)
+
+[![Release](https://img.shields.io/github/v/release/sarabelinformatika/npmplus-reverse-proxy-security-guide?style=flat-square&label=release)](https://github.com/sarabelinformatika/npmplus-reverse-proxy-security-guide/releases)
+[![Stars](https://img.shields.io/github/stars/sarabelinformatika/npmplus-reverse-proxy-security-guide?style=flat-square)](https://github.com/sarabelinformatika/npmplus-reverse-proxy-security-guide/stargazers)
+[![Forks](https://img.shields.io/github/forks/sarabelinformatika/npmplus-reverse-proxy-security-guide?style=flat-square)](https://github.com/sarabelinformatika/npmplus-reverse-proxy-security-guide/network/members)
+
+[![Issues](https://img.shields.io/github/issues/sarabelinformatika/npmplus-reverse-proxy-security-guide?style=flat-square)](https://github.com/sarabelinformatika/npmplus-reverse-proxy-security-guide/issues)
+[![Last commit](https://img.shields.io/github/last-commit/sarabelinformatika/npmplus-reverse-proxy-security-guide?style=flat-square)](https://github.com/sarabelinformatika/npmplus-reverse-proxy-security-guide/commits/main)
+[![License](https://img.shields.io/github/license/sarabelinformatika/npmplus-reverse-proxy-security-guide?style=flat-square)](LICENSE)
+
 A production-oriented, security-focused guide for designing, deploying, hardening, validating, monitoring, backing up, and recovering an NPMplus reverse-proxy platform.
 
 This independent guide is published and maintained by [SARABEL Informatika Kft.](https://sarabelinformatika.hu). It complements the upstream NPMplus documentation with an operations-first control model, repeatable deployment records, read-only validation scripts, and recovery evidence.
